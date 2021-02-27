@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script type="text/javascript">
+    function Redirect() {
+               var  question=$("#question").val();
+               question=question.replace("chegg","nochegg");
+               var url=question;
+              window.location=url;
+           }
+    </script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -84,8 +93,8 @@
                 <h3 class="heading mt-5 text-center">Hi! Enter Your Chegg Question URL Now!</h3>
                 <div class="d-flex justify-content-center px-5">
                     <div class="search"> 
-                        <input type="text" class="search-input" placeholder="Chegg Question URL" name="find" value='<?php echo $find; ?>'/>  
-                        <a href="#" class="search-icon"> 
+                        <input type="text" class="search-input" placeholder="Chegg Question URL" name="find" id="question">  
+                        <a id="button" type="button" onclick="Redirect();" class="search-icon"> 
                             <i class="fa fa-search"></i> 
                         </a>
                      </div>
